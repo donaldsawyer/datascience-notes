@@ -1,0 +1,48 @@
+---
+title: "isur_notes"
+author: "Donald Sawyer"
+date: "August 11, 2016"
+output: html_document
+---
+
+# Data Notes
+
+Dataset|Description|Location
+:-------|:-----------|:-------
+`precip`|(v) Contains average rainfall for 70 cities.|R Base packages
+`rivers`|(v) Contains the length of various in the US.|`datasets`
+`discoveries`|(v) Time series of number of inventions "great" inventions from 1860-1959|R Base packages
+
+# Chapter 3 - Data Descriptions
+
+## Quantitative Data
+
+###Discrete vs. Continuous Data
+
+Take a look at the precip dataset a bit.
+`precip` is continuous quantitative data.  The data are in floating point continuous measurements.
+
+```{r}
+str(precip)
+precip[1:4]
+```
+
+What about the `rivers` data?  The measurements here are rounded to the nearest mile, and are thus discrete and not continuous.
+It may be useful to make them continuous, but for now, they represent discrte data.
+```{r} 
+str(rivers)
+```
+
+The `discoveries` dataset contains time series data of the number of "great" inventions from 1860-1959 from the 1979 world almanac.
+Each entry is an integer (count), and represents *discrete quantitative* data.
+
+```{r}
+str(discoveries)
+```
+
+### Displaying Quantitative Data
+Once you have some quantitative data, it is best to display the data in some way that helps you understand it a little better.
+
+#### Strip charts (dot plots)
+**x-axis**: Numerical Scale
+**y-axis**
